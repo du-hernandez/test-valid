@@ -1,15 +1,19 @@
 import {call, put, takeLatest, all} from 'redux-saga/effects';
 import API from '../api';
-import {ActionTypes} from '../actionTypes';
+import Creator, {ActionTypes} from '../actionTypes';
 
 const api = API.create();
 
 function* getTopArtists() {
   const response = yield call(api.getTopArtists);
   if (response.ok) {
-    console.log('response: ', JSON.stringify(response.data));
+    yield put(Creator.getTopArtistsSuccess(response.data));
   } else {
-    console.warn('Failure');
+    yield put(
+      Creator.getTopArtistsFailure({
+        error: {message: 'Data cannot be accessed'},
+      }),
+    );
   }
 }
 

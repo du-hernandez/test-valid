@@ -6,16 +6,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     margin: 5,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    height: 50,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: 'gray',
-    borderRadius: 5,
+    borderTopLeftRadius: 50,
+    borderBottomLeftRadius: 50,
+    borderRadius: 50,
+    backgroundColor: '#3CAEA3',
+    paddingRight: 20,
   },
-  title: {
+  body: {},
+  name: {
+    color: '#FFF',
     fontWeight: 'bold',
-    color: 'gray',
+  },
+  avatar: {
+    borderWidth: 3,
+    borderColor: '#FFF',
   },
 });
 

@@ -11,13 +11,12 @@ const INITIAL_STATE = Inmutable({
 export const getTopArtists = (state) => state.merge({loading: true});
 
 export const getTopArtistsSuccess = (state, action) => {
-  const {payload} = action;
-  return state.merge({loading: false, topArtists: payload.data});
+  // const {payload} = action;
+  return state.merge({loading: false, topArtists: action.res.topartists});
 };
 
 export const getTopArtistsFailure = (state, action) => {
-  const {payload} = action;
-  return state.merge({loading: false, error: payload.error});
+  return state.merge({loading: false, error: action.error});
 };
 
 export const topArtistsDismissError = (state) => state.merge({error: null});
