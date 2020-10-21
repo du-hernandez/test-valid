@@ -19,16 +19,20 @@ const FeedRoutes = () => (
     <Stack.Screen
       name="ARTISTS"
       component={ArtistsRoutes}
-      options={{
-        headerShown: false,
-      }}
+      options={
+        {
+          // headerShown: false,
+        }
+      }
     />
     <Stack.Screen
       name="TRACKS"
       component={TracksRoutes}
-      options={{
-        headerShown: false,
-      }}
+      options={
+        {
+          // headerShown: false,
+        }
+      }
     />
   </Stack.Navigator>
 );

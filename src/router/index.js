@@ -6,7 +6,11 @@ const Stack = createStackNavigator();
 
 const Router = () => (
   <Stack.Navigator>
-    <Stack.Screen name="HOME" component={HomeRoutes} />
+    <Stack.Screen
+      name="HOME"
+      component={HomeRoutes}
+      options={{headerShown: false}}
+    />
   </Stack.Navigator>
 );
 
