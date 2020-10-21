@@ -1,13 +1,16 @@
 import React from 'react';
-import {View} from 'react-native';
 import {Provider as ReduxProvider} from 'react-redux';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
 import {store} from './store';
-import Feed from './containers/modules/home/feed';
+import Router from './router';
 
 const App = () => (
-  <ReduxProvider store={store}>
-    <Feed />
-  </ReduxProvider>
+  <NavigationContainer>
+    <ReduxProvider store={store}>
+      <Router />
+    </ReduxProvider>
+  </NavigationContainer>
 );
 
 export default App;
