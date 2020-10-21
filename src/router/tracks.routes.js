@@ -10,12 +10,12 @@ const TracksRoutes = () => (
     <Stack.Screen
       name="TOP_TRACKS"
       component={Feed}
-      options={{title: 'Top Tracks'}}
+      options={{title: 'TOP TRACKS'}}
     />
     <Stack.Screen
       name="TRACK_DETAIL"
       component={Feed}
-      options={{title: 'Track Detail'}}
+      options={{title: 'TRACK DETAIL'}}
     />
   </Stack.Navigator>
 );

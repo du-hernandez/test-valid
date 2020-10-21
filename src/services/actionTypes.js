@@ -2,14 +2,14 @@ import {createActions} from 'reduxsauce';
 
 const {Types, Creators} = createActions({
   getTopArtists: null,
-  getTopArtistsSuccess: ['respuesta'],
+  getTopArtistsSuccess: ['res'],
   getTopArtistsFailure: ['error'],
-  topArtistsDismissError: ['dismiss error'],
+  topArtistsDismissError: ['res'],
 
   getTopTracks: null,
-  getTopTracksSuccess: ['respuesta'],
+  getTopTracksSuccess: ['res'],
   getTopTracksFailure: ['error'],
-  topTracksDismissError: ['dismiss error'],
+  topTracksDismissError: ['res'],
 });
 
 export const ActionTypes = Types;

@@ -11,13 +11,11 @@ const INITIAL_STATE = Inmutable({
 export const getTopTracks = (state) => state.merge({loading: true});
 
 export const getTopTracksSuccess = (state, action) => {
-  const {payload} = action;
-  return state.merge({loading: false, topTracks: payload.data});
+  return state.merge({loading: false, topTracks: action.res.tracks});
 };
 
 export const getTopTracksFailure = (state, action) => {
-  const {payload} = action;
-  return state.merge({loading: false, error: payload.error});
+  return state.merge({loading: false, error: action.error});
 };
 
 export const topTracksDismissError = (state) => state.merge({error: null});

@@ -1,15 +1,19 @@
 import {call, put, takeLatest, all} from 'redux-saga/effects';
 import API from '../api';
-import {ActionTypes} from '../actionTypes';
+import Creator, {ActionTypes} from '../actionTypes';
 
 const api = API.create();
 
 function* getTopTracks() {
   const response = yield call(api.getTopTracks);
   if (response.ok) {
-    console.log('response: ', JSON.stringify(response.data));
+    yield put(Creator.getTopTracksSuccess(response.data));
   } else {
-    console.warn('Failure');
+    yield put(
+      Creator.getTopTracksFailure({
+        error: {message: 'Data cannot be accessed'},
+      }),
+    );
   }
 }
 
